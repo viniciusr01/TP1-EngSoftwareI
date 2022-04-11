@@ -4,16 +4,18 @@
 
 
 <p align="center"> <h1> TP1 - Engenharia de Software </h1> </p>
-<p align="center"> <h1> TYP.IO </h1> </p>
+<p align="center"> <h3> TYP.IO </h3> </p>
 
 | [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possíveis-features) | [Possíveis Tecnologias](#possíveis-tecnologias) |
 | - | - | - | - |
 
 
-
+</br>
 ### TYP.IO
 
 O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitação. Ele propõe um sistema web para o treinamento de digitação de códigos em diversas linguagens de programação.
+</br>
+</br>
 
 ### Integrantes
 - Bernnardo Seraphim Baptista de Oliveira - 
@@ -22,11 +24,15 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 
 > Professor: Marco Tulio Valente
 
-
+</br>
+</br>
 ### Possíveis features
 - Cadastro de usuários
 - Escolha da Linguagem de Programação
 - Leaderboard de usuários cadastrados
+
+</br>
+</br>
 
 ### Possíveis Tecnologias
 - Front-end: React.JS
