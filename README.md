@@ -1,14 +1,18 @@
-<p align="center">
+
+<div align="center">
+  
+<p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_UFMG.png/320px-Logo_UFMG.png" alt="alt text" width="210" height="82">
 </p>
 
 
-<p align="center"> <h1> TP1 - Engenharia de Software </h1> </p>
+<p> <h2> TP1 - Engenharia de Software </h2> </p>
 
-
+  
 | [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possíveis-features) | [Possíveis Tecnologias](#possíveis-tecnologias) |
 | - | - | - | - |
-
+  
+</div>
 
 </br>
 
