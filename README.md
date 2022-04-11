@@ -26,6 +26,7 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 
 ### Integrantes
 - Bernnardo Seraphim Baptista de Oliveira - 2019006477
+- Pablo Correa Costa - 2017014774
 - Samuel Lipovetsky - 2019065210
 - Vinicius Rodrigues Oliveira - 2018130271
 
