@@ -17,7 +17,7 @@
 O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitação. Ele propõe um sistema web para o treinamento de digitação de códigos em diversas linguagens de programação.
 
 </br>
-</br>
+
 
 
 ### Integrantes
@@ -28,7 +28,7 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 > Professor: Marco Tulio Valente
 
 </br>
-</br>
+
 
 ### Possíveis features
 - Cadastro de usuários
@@ -36,7 +36,7 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 - Leaderboard de usuários cadastrados
 
 </br>
-</br>
+
 
 ### Possíveis Tecnologias
 - Front-end: React.JS
