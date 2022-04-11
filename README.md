@@ -6,8 +6,8 @@
 <p align="center"> <h1> TP1 - Engenharia de Software </h1> </p>
 <p align="center"> <h1> TYP.IO </h1> </p>
 
-| [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possiveis-features) | [Possíveis Tecnologias](#possiveis-tecnologias) |
-| - | - | - |
+| [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possíveis-features) | [Possíveis Tecnologias](#possíveis-tecnologias) |
+| - | - | - | - |
 
 
 
