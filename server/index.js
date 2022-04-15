@@ -5,4 +5,4 @@ app.get('/', (req,res) => {
 
 })
 
-app.listen(3000, 'localhost', () => console.log('Servidor Rodando'))
+app.listen(5000, 'localhost', () => console.log('Servidor Rodando'))
