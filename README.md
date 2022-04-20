@@ -114,5 +114,10 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
  - Implementar um sistema que armazene os melhores resultados obtidos pelo usuário em cada linguagem de programação; (Back-end)
  - Implementar interface que mostre ao usuário seus melhores resultados;
 
+### 5) História: Como usuário normal, eu gostaria de ver o ranking dos usuários de maneira descrente que fizeram o melhor tempo;
+  Tarefas:
+  - Projetar e testar interface que permita o usuário ver o ranking (Front-end)
+  - Implementar e testar rota get para pegar os dados de recorde de velocidade dos usuários cadastrados no banco de dados (Back-end)
+
 
 
