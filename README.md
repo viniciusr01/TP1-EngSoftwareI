@@ -100,5 +100,19 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 - Projetar um sistema de autenticação de login; (Back-end)
 - Implementar sistema de autenticação de login; (Back-end)
 
+### 3) Historia: Como usuário normal, eu gostaria de selecionar a linguagem de programação que desejo treinar;
+  Tarefas:
+ - Projetar e testar uma interface web que permita o usuário acompanhar seus inputs; (Front-end)
+ - Escolher linguagens de programação possíveis e criar interface que permita o usuário escolher a de interesse; (Front-end)
+ - Implementar interface que mostre ao usuário códigos válidos da linguagem de programação escolhida (Front-end)
+ - Implementar um sistema que indique se o input dado corresponde ao apresentado; (Front-end)
+ - Implementar um sistema que indique, em caso de erro, onde ele ocorreu; (Front-end)
+ - 
+### 4) Historia: Como usuário normal, eu gostaria de treinar e visualizar o tempo que levei para concluir meu treino;
+  Tarefas:
+ - Adicionar a interface web um cronômetro contando desde o início da atividade; (Front-end)
+ - Implementar um sistema que armazene os melhores resultados obtidos pelo usuário em cada linguagem de programação; (Back-end)
+ - Implementar interface que mostre ao usuário seus melhores resultados;
+
 
 
