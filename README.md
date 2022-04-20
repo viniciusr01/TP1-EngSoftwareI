@@ -9,14 +9,14 @@
 <p> <h2> TP1 - Engenharia de Software </h2> </p>
 
   
-| [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possíveis-features) | [Possíveis Tecnologias](#possíveis-tecnologias) |
-| - | - | - | - |
+| [Sobre](#Sobre) | [Integrantes](#integrantes) | [Possíveis features](#possíveis-features) | [Possíveis Tecnologias](#possíveis-tecnologias) | [Backlog do Sistema](#backlog-do-sistema) |
+| - | - | - | - | - |
   
 </div>
 
 </br>
 
-### TYP.IO
+## TYP.IO
 
 O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitação. Ele propõe um sistema web para o treinamento de digitação de códigos em diversas linguagens de programação.
 
@@ -48,3 +48,57 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 - Front-end: React.JS
 - Back-end:  Express.JS
 - Banco de dados: PostgreSQL
+
+</br>
+
+
+## BACKLOG DO SISTEMA 
+
+</br>
+
+### Requisitos:
+- Realizar login;
+- Cadastrar usuário;
+- Selecionar a linguagem de programação
+- Visualizar leaderboard dos usuários cadastrados
+
+</br>
+ 
+ 
+ ### Tarefas técnicas:
+- Preparar ambiente de desenvolvimento (Back-end)
+- Preparar ambiente de desenvolvimento (Front-end)
+- Desenvolver esquema do banco de dados
+
+</br>
+
+
+### Histórias de Usuário:
+- Como usuário normal, eu gostaria de conseguir me cadastrar na plataforma;
+- Como usuário normal, eu gostaria de realizar login;
+- Como usuário normal, eu gostaria de selecionar a linguagem de programação que desejo treinar;
+- Como usuário normal, eu gostaria de treinar e visualizar o tempo que levei para concluir meu treino;
+- Como usuário normal, eu gostaria de ver o ranking dos usuários de maneira descrente que fizeram o melhor tempo;
+
+</br>
+
+### 1) História: Como usuário normal, eu gostaria de conseguir me cadastrar na plataforma.
+  Tarefas:
+- Projetar e testar interface web;
+- Implementar interface web;
+- Criar esquema do banco de dados de usuários;
+- Criar e testar formulário de cadastro de usuário;
+- Criar e testar rota para adicionar usuário;
+ 
+ </br>
+ 
+ 
+### 2) Historia: Como usuario normal, gostaria de realizar login na plataforma.
+  Tarefas:
+- Projetar e testar interface web da página de login; (Design,Front-end)
+- Implementar interface web da página de login; (Front-end)
+- Projetar um sistema de autenticação de login; (Back-end)
+- Implementar sistema de autenticação de login; (Back-end)
+
+
+
