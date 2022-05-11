@@ -13,8 +13,6 @@ function login () {
   })
 }
 
-
-
 class Home extends React.Component {
 
     
