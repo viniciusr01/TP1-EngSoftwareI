@@ -1,5 +1,10 @@
-const app = require('./config/express-config');
+const express = require ('express')
+const bodyParser = require ('body-parser')
+const app = express();
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', (req,res) => {
     res.send("It's working...")
@@ -7,12 +12,11 @@ app.get('/', (req,res) => {
 })
 
 
-//Rota de Login [Vinicius]
-app.get('/login', (req, res) => {
+const login = require ('./routes/login');
+app.use(login.router);
 
-    console.log("Login Route Working...");
-    res.send("Login Route Working...");
-})
+const callback = require ('./routes/callback');
+app.use(callback);
 
 
 

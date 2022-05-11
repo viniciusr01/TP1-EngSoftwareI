@@ -9,7 +9,7 @@ function login () {
   .get('/login')
   .then(url_login => {
     console.log(url_login.data);
-    //window.location.href = url_login.data 
+    window.location.href = url_login.data 
   })
 }
 
