@@ -5,7 +5,7 @@ import { BsArrowReturnLeft } from "react-icons/bs";
 
 import { BsArrowReturnRight } from "react-icons/bs";
 import { BsArrowCounterclockwise } from "react-icons/bs";
-
+import {NavDropdown ,DropdownButton,Dropdown} from   'react-bootstrap'
 class Letter extends React.Component {
   constructor(props) {
     super(props);
@@ -39,31 +39,46 @@ class TypeBoard extends React.Component {
     this.state = {
       sampleString:"",
       typedString: "",
-      wpm: "",
-      acc: "",
+      wpm: 0,
+      acc: 100,
       dailyGoal: "",
       n_chars: 0,
       n_chars_c: 0,
       index: 0,
-      previous_id:"",
-      lang:"",
+      previous_id:[],
+      id:"",
+      lang:"Javascript",
+      firstPress:"",
     };
   }
   componentDidMount() {
     window.addEventListener("keypress", this.pressHandler);
     window.addEventListener("keydown", this.backSpaceHandler);
-    console.log(Math.random()%3)
-    this.getSample(Math.ceil(Math.random()*3))
+    // console.log(Math.random()%3)
+    this.getSample(Math.ceil(Math.random()*3),this.state.lang)
   }
 
-  getSample = (id) => {
+  getSample = (id,lang) => {
     return axios({method:"get",
                   url:"http://localhost:5000/randomSample",
-                  headers:{"id":id}
+                  headers:{"id":id,"lang":lang},
     }).then((res)=>{
      
       this.setState({sampleString:res.data})
+      // console.log(res.data)
+      this.setState({id:id})
+      // this.setState({previous_id:[...this.state.previous_id,id]})
     })
+    
+  }
+  next =()=>{
+    
+    let n =Math.ceil(Math.random()*3)
+    if(n== this.state.id){
+      n=n+1
+    }
+    this.getSample(n,this.state.lang) 
+  
   }
   getStyle = (index) => {
     if (
@@ -92,11 +107,40 @@ class TypeBoard extends React.Component {
         ),
         index: this.state.index - 1,
       });
-      console.log(this.state.index, this.state.typedString);
+      // console.log(this.state.index, this.state.typedString);
     }
   };
+  reset =()=>{
+    this.setState({ typedString: "",wpm: 0,
+    acc: 100, n_chars: 0,
+    n_chars_c: 0,
+    index: 0,firstPress:""})
+
+  }
+  handleSelect =(e) =>{
+    console.log( e)
+    if (e!=this.state.lang){
+   
+    this.reset()
+    let i =Math.ceil(Math.random()*3)
+    return axios({method:"get",
+    url:"http://localhost:5000/randomSample",
+    headers:{"id":i,"lang":e },
+      }).then((res)=>{
+      this.setState({sampleString:res.data})
+      this.setState({id:i})
+      this.setState({lang:e})
+      })
+   
+    }
+    // console.log(this.state.lang)
+  }
   pressHandler = (e) => {
-    console.log(this.state.index, this.state.typedString);
+    if (this.state.firstPress==0){
+      this.setState({firstPress :(new Date()).getTime()})
+      // this.state.firstPress=(new Date()).getTime()
+    }
+    // console.log(this.state.index, this.state.typedString);
 
     if (e.key != "Backspace") {
       this.setState({ index: this.state.index + 1 });
@@ -115,9 +159,13 @@ class TypeBoard extends React.Component {
     ) {
       this.setState({ n_chars_c: this.state.n_chars_c + 1 });
     }
-    this.setState({ acc: (this.state.n_chars_c / this.state.n_chars) * 100 });
+    this.setState({ acc: ((this.state.n_chars_c / this.state.n_chars) * 100) });
+    let date= new Date()
+    console.log((date.getTime()-this.state.firstPress)/(1000),this.state.n_chars, this.state.n_chars-this.state.n_chars_c)
+    let wrong_chars =(this.state.n_chars-this.state.n_chars_c)
+    this.setState({wpm:((((this.state.n_chars/5)- wrong_chars )/(-(this.state.firstPress - date.getTime())/(1000*60))))})
   };
-  render() {
+  render() {  
     return (
       <div className="container-lg  ">
         <div className=" mx-auto w-50 h-100 d-flex flex-column mx-auto justify-content-end ">
@@ -129,9 +177,12 @@ class TypeBoard extends React.Component {
               className="  d-flex flex-row bd-highlight  w-100 "
               style={{ background: "black" }}
             >
-              <div className="p-2 bd-highlight text-white">wpm: </div>
+              <div className="p-2 bd-highlight text-white">wpm:{Math.trunc(this.state.wpm)} </div>
               <div className="p-2 bd-highlight text-white">
-                accuracy: {this.state.acc}
+                accuracy: {Math.trunc(this.state.acc)}
+              </div>
+              <div className="p-2 bd-highlight text-white">
+                {this.state.lang}
               </div>
               {/* <div className="p-2 bd-highlight text-white">daily goal: xx</div> */}
             </div>
@@ -144,21 +195,28 @@ class TypeBoard extends React.Component {
               ))}
             </div>
           </div>
-
+                
           <div
             className=" rounded-bottom w-33 ms-auto p-1  d-flex justify-content-end flex-row bd-highlight "
             style={{ background: "black" }}
           >
-            <div className="d-flex m-1 flex-rowp-2 bd-highlight text-white">
-              <div className="me-1">
-                <BsArrowReturnLeft
-                  style={{ color: "white" }}
-                ></BsArrowReturnLeft>
-              </div>
-              <div>previous</div>
+
+            <div>
+            <Dropdown  onSelect={(e)=> this.handleSelect(e)}>
+          <Dropdown.Toggle  style={{ background: "black",border:"black" }}  menuVariant="dark" variant="dark" id="dropdown-basic">
+          Language
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu defaultValue="Select fruit"  >
+            <Dropdown.Item   eventKey="c">C</Dropdown.Item>
+            <Dropdown.Item   eventKey="Javascript">Javascript</Dropdown.Item>
+            <Dropdown.Item   eventKey="Python">Python</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
             </div>
-            <div className="d-flex m-1 flex-rowp-2 bd-highlight text-white">
-              <div className="me-1">
+            <div className="d-flex m-1 flex-rowp-2 bd-highlight text-white" style={{cursor:"pointer"}} onClick={this.reset}>
+              <div className="me-1" >
+              
                 <BsArrowCounterclockwise
                   style={{ color: "white" }}
                 ></BsArrowCounterclockwise>
@@ -166,7 +224,7 @@ class TypeBoard extends React.Component {
               <div>reset</div>
             </div>
 
-            <div className="d-flex m-1 flex-rowp-2 bd-highlight text-white">
+            <div className="d-flex m-1 flex-rowp-2 bd-highlight text-white" style={{cursor:"pointer"}} onClick={this.next}>
               <div className="me-2">next</div>
               <div>
                 <BsArrowReturnRight

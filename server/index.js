@@ -1,5 +1,4 @@
-
-const express = require ('express')
+var express = require('express')
 const bodyParser = require ('body-parser')
 
 const app = require('./config/express-config');
@@ -26,10 +25,14 @@ const callback = require ('./routes/callback');
 app.use(callback);
 
 app.get('/randomSample',cors(corsOptions),(req,res)=>{
+    
+let lang = req.headers.lang
 let id = req.headers.id
-let json = require('./samples/c.json');
-// console.log(json)  
+
+let json = require('./samples/'+lang+'.json');
+console.log(json[id])
 res.send(json[id]);
+
 })
 
 app.listen(5000, 'localhost', () => console.log('Servidor Rodando'))

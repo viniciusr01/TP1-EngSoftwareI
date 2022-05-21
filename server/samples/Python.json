@@ -1,0 +1,6 @@
+{
+    "1":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()",
+    "2":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()",
+    "3":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()"
+    
+}
