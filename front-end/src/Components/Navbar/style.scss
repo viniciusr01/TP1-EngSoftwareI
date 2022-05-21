@@ -1,0 +1,21 @@
+.Navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 7rem;
+
+    .siteTitle {
+        font-size: 3rem;
+        font-weight: 900;
+        text-decoration: none;
+        color: var(--main-brown)
+    }
+    
+    .Navbar-nav{
+        display: flex;
+        list-style: none;
+
+        
+    }
+}

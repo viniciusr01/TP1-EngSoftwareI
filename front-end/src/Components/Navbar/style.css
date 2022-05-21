@@ -1,0 +1,28 @@
+.Navbar {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 7rem;
+}
+
+.Navbar .siteTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--main-brown);
+}
+
+.Navbar .Navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+/*# sourceMappingURL=style.css.map */
