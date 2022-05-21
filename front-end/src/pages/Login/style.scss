@@ -1,0 +1,16 @@
+.loginBody {
+    display: flex;
+    width: 100vw;
+
+    .leftColumn {
+        width: 30vw;
+    }
+
+    .rightColumn {
+        width: 30vw;
+
+        img {
+            width: 25vw;
+        }
+    }
+}

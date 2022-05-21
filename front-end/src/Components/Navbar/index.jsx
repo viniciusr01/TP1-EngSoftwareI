@@ -56,7 +56,7 @@ export default function Navbar (props) {
                 <Navitem
                     name='settings'
                     href='settings'
-                    active={isThisActive('leaderboard')}/>
+                    active={isThisActive('settings')}/>
 
                 <Navitem
                     name='login'

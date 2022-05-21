@@ -1,0 +1,19 @@
+.loginBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+}
+
+.loginBody .leftColumn {
+  width: 30vw;
+}
+
+.loginBody .rightColumn {
+  width: 30vw;
+}
+
+.loginBody .rightColumn img {
+  width: 25vw;
+}
+/*# sourceMappingURL=style.css.map */
