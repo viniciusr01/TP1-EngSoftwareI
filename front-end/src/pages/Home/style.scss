@@ -1,0 +1,35 @@
+.homeBody {
+    width: 100vw;
+    height: 70vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .SecundaryLogo {
+        width: 30vw;
+    }
+
+    .rightColumn {
+        width: 30vw;
+        color: var(--main-brown);
+        
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        margin:0;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        color: var(--main-blue);
+        margin:0;
+    }
+
+    p {
+        font-size: 1.3rem;
+        width: 85%;
+        margin:0;
+    }
+}

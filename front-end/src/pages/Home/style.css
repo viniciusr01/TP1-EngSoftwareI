@@ -1,0 +1,40 @@
+.homeBody {
+  width: 100vw;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.homeBody .SecundaryLogo {
+  width: 30vw;
+}
+
+.homeBody .rightColumn {
+  width: 30vw;
+  color: var(--main-brown);
+}
+
+.homeBody h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.homeBody h2 {
+  font-size: 1.7rem;
+  color: var(--main-blue);
+  margin: 0;
+}
+
+.homeBody p {
+  font-size: 1.3rem;
+  width: 85%;
+  margin: 0;
+}
+/*# sourceMappingURL=style.css.map */

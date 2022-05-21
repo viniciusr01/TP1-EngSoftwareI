@@ -2,6 +2,7 @@
     --main-brown: #28261D;
     --main-white: #F2F2F4;
     --main-blue: #4369F2;
+
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
