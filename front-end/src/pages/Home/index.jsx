@@ -1,9 +1,23 @@
 import React from "react";
+import axios from 'axios';
 
 import Navbar from "../../Components/Navbar"
 import SecundaryLogo from "../../Assets/SecondaryLogo.png"
 
 import "./style.css"
+
+//Cookie
+import Cookies from "universal-cookie";
+const cookies = new Cookies ();
+
+
+axios
+  .get('/info')
+  .then(info => {
+    console.log(info.data);
+    cookies.set("Nome", info.data.Nome, {path: "/",});
+    cookies.set("Email", info.data.Email, {path: "/"});
+})
 
 
 export default function Home () {

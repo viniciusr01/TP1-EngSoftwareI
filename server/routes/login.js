@@ -12,8 +12,6 @@ const urlLogin = client.authorizationUrl({
 });
 
 
-
-//Rota de Login [Vinicius]
 router.get('/login', (req, res) => {
 
     console.log(urlLogin);

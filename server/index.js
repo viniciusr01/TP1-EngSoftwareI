@@ -1,7 +1,15 @@
-const express = require ('express')
-const bodyParser = require ('body-parser')
+const express = require ('express');
+const bodyParser = require ('body-parser');
 const app = express();
 
+
+//Banco de Dados
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database('./db/DataBase.db')
+
+db.run("CREATE TABLE IF NOT EXISTS USUARIOS (email TEXT PRIMARY KEY, nome TEXT)")
+
+//Fim do DB
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));

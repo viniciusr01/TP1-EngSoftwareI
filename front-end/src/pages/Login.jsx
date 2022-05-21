@@ -19,20 +19,7 @@ class Home extends React.Component {
 
     
     render (){
-    return (
-        <div className="App-header">
-            <h1> TYP.IO </h1>
-
-            <button
-              className = "button-login"
-              onClick = {login}
-              >
-                Login
-             </button>
-
-        </div>
-        
-    )
+    return login();
 
     }
 };
