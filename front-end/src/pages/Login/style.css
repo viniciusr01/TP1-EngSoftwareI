@@ -1,12 +1,35 @@
 .loginBody {
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
+  font-family: 'Roboto Slab';
 }
 
 .loginBody .leftColumn {
   width: 30vw;
+  text-align: right;
+  color: var(--main-brown);
+}
+
+.loginBody .leftColumn h1 {
+  font-weight: 900;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.loginBody .leftColumn h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
 }
 
 .loginBody .rightColumn {
@@ -14,6 +37,7 @@
 }
 
 .loginBody .rightColumn img {
-  width: 25vw;
+  width: 22vw;
+  color: var(--main-brown);
 }
 /*# sourceMappingURL=style.css.map */

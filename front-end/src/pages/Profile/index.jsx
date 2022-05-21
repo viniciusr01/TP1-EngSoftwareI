@@ -2,10 +2,10 @@ import React from "react";
 import Navbar from "../../Components/Navbar";
 
 
-export default function Type () {
+export default function Profile () {
     return (
-        <div className="Type">
-            <Navbar active="type"/>
+        <div className="Profile">
+            <Navbar active="profile"/>
         </div>
     )
 }

@@ -1,16 +1,39 @@
 .loginBody {
+    height: 70vh;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100vw;
+    font-family: 'Roboto Slab';
 
     .leftColumn {
         width: 30vw;
+        text-align: right;
+        color: var(--main-brown);
+        
+
+        h1 {
+            
+            font-weight: 900;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin: 0;
+            margin-top: 1vh;
+            margin-bottom: 2vh;
+        }
     }
 
     .rightColumn {
         width: 30vw;
 
         img {
-            width: 25vw;
+            width: 22vw;
+            color: var(--main-brown)
         }
     }
 }

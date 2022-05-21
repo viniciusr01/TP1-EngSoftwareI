@@ -1,7 +1,18 @@
 .Button {
-  width: 300px;
-  height: 100px;
+  width: 50%;
+  height: 3rem;
   background-color: var(--main-brown);
   color: var(--main-white);
+  font-family: 'Roboto Slab';
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
+}
+
+.Button:hover {
+  background-color: var(--main-blue);
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
