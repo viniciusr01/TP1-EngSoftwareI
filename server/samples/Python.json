@@ -1,6 +1,6 @@
 {
-    "1":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()",
-    "2":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()",
-    "3":"class Tasks(models.Model):\n    id=models.AutoField(primary_key=True)\n    title = models.CharField(max_length=100, blank=True, default='')\n    description = models.TextField()\n    max_time = models.IntegerField(default=0)\n    created_at = models.DateTimeField()"
+    "1":"class Tasks(models.Model):\n\tid=models.AutoField(primary_key=True)\n\ttitle = models.CharField(max_length=100, blank=True, default='')\n\tdescription = models.TextField()\n\tmax_time = models.IntegerField(default=0)\n\tcreated_at = models.DateTimeField()",
+    "2":"class Tasks(models.Model):\n\tid=models.AutoField(primary_key=True)\n\ttitle = models.CharField(max_length=100, blank=True, default='')\n\tdescription = models.TextField()\n\tmax_time = models.IntegerField(default=0)\n\tcreated_at = models.DateTimeField()",
+    "3":"class Tasks(models.Model):\n\tid=models.AutoField(primary_key=True)\n\ttitle = models.CharField(max_length=100, blank=True, default='')\n\tdescription = models.TextField()\n\tmax_time = models.IntegerField(default=0)\n\tcreated_at = models.DateTimeField()"
     
 }

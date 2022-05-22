@@ -1,6 +1,6 @@
 {
-    "1":"Accepts.prototype.types = function (types_) {\n  var types = types_\n\n   if (types && !Array.isArray(types)) {\n    types = new Array(arguments.length)\n    for (var i = 0; i < types.length; i++) {\n      types[i] = arguments[i]\n    }\n  }\n \n}" ,
-    "2":"Accepts.prototype.encodings = function (encodings_) {\n  var encodings = encodings_\n\n    if (encodings && !Array.isArray(encodings)) {\n    encodings = new Array(arguments.length)\n    for (var i = 0; i < encodings.length; i++) {\n      encodings[i] = arguments[i]\n    }\n  }\n}",
-    "3":"function flattenWithDepth (array, result, depth) {\n  for (var i = 0; i < array.length; i++) {\n    var value = array[i]\n\n    if (depth > 0 && Array.isArray(value)) {\n      flattenWithDepth(value, result, depth - 1)\n    } else {\n      result.push(value)\n    }\n  }\n\n  return result\n}\n"
+    "1":"Accepts.prototype.types = function (types_) {\n \tvar types = types_\n\tif (types && !Array.isArray(types)) {\n\ttypes = new Array(arguments.length)\n\tfor (var i = 0; i < types.length; i++) {\n\ttypes[i] = arguments[i]\n}\n}\n\n}" ,
+    "2":"Accepts.prototype.encodings = function (encodings_) {\n \tvar encodings = encodings_\n\tif (encodings && !Array.isArray(encodings)) {\n    encodings = new Array(arguments.length)\n\tfor (var i = 0; i < encodings.length; i++) {\n\tencodings[i] = arguments[i]\n}\n}\n}",
+    "3":"function flattenWithDepth (array, result, depth) {\n \tfor (var i = 0; i < array.length; i++) {\n\tvar value = array[i]\n\tif (depth > 0 && Array.isArray(value)) {\n\t\tflattenWithDepth(value, result, depth - 1)\n\t} else {\n\tresult.push(value)\n}\n}\nreturn result\n}\n"
 
 }

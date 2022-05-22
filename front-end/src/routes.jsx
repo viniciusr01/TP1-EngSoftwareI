@@ -20,13 +20,11 @@ const routes = () => {
                 <Route exact path ="/login" element={<Login />}/>
                 <Route exact path ="/logout" element={<Logout />}/>
                 <Route exact path ="/profile" element={<Profile />}/>
-                <Route exact path ="/type" element={<Type />}/>
+                {/* <Route exact path ="/type" element={<Type />}/> */}
                 <Route exact path ="/leaderboard" element={<Leaderboard />}/>
                 <Route exact path ="/leaderboard" element={<Leaderboard />}/>
                 <Route exact path ="/" element={<Home />}/>
-                <Route exact path ="/practice" element={<div><Navbar></Navbar><TypeBoard />
-                    
-                    </div>}/>
+                <Route exact path ="/type" element={<div><Navbar></Navbar><TypeBoard /></div>}/>
                 
                 
                

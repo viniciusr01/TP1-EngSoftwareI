@@ -1,11 +1,15 @@
 import React from "react";
 import axios from "axios";
 
-import { BsArrowReturnLeft } from "react-icons/bs";
+import { BsArrowReturnLeft, BsCloudSnowFill } from "react-icons/bs";
 
 import { BsArrowReturnRight } from "react-icons/bs";
 import { BsArrowCounterclockwise } from "react-icons/bs";
 import {NavDropdown ,DropdownButton,Dropdown} from   'react-bootstrap'
+import Cookies from "universal-cookie";
+import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
+
+
 class Letter extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +19,10 @@ class Letter extends React.Component {
       return { width: "1%" };
     
     } else if (this.props.letter == "\n") {
-      return { width: "100%" ,heigth:"0px",margin:"0px" };
+      return { width: "100%" ,heigth:"2px",margin:"0px" };
+    }
+    else if(this.props.letter =="\t"){
+      return {width:"10%"}
     }
   };
 
@@ -49,13 +56,39 @@ class TypeBoard extends React.Component {
       id:"",
       lang:"Javascript",
       firstPress:"",
+      cookies : new Cookies ()
     };
   }
+  
+
+  InsertInfoDB=(tempoDigitacao,lang,nc,accu,wpm) =>{
+
+  const infoCookie = this.state.cookies.getAll();
+
+  axios
+  .post('/insert', {
+    Nome: infoCookie.Nome,
+    Email: infoCookie.Email,
+    numero_chars :nc,
+    lang:lang,
+    acc: accu,
+    wpm:wpm,
+    Time: tempoDigitacao
+  })
+  .then(function (response){
+    console.log(response);
+  })
+  .catch(function(error){
+      console.log(error);
+  })
+
+}
   componentDidMount() {
     window.addEventListener("keypress", this.pressHandler);
     window.addEventListener("keydown", this.backSpaceHandler);
-    // console.log(Math.random()%3)
+
     this.getSample(Math.ceil(Math.random()*3),this.state.lang)
+    // this.InsertInfoDB(100,"javascript",100,100.5,30)
   }
 
   getSample = (id,lang) => {
@@ -65,14 +98,14 @@ class TypeBoard extends React.Component {
     }).then((res)=>{
      
       this.setState({sampleString:res.data})
-      // console.log(res.data)
+     
       this.setState({id:id})
-      // this.setState({previous_id:[...this.state.previous_id,id]})
+   
     })
     
   }
   next =()=>{
-    
+    this.reset()
     let n =Math.ceil(Math.random()*3)
     if(n== this.state.id){
       n=n+1
@@ -80,7 +113,7 @@ class TypeBoard extends React.Component {
     this.getSample(n,this.state.lang) 
   
   }
-  getStyle = (index) => {
+  getStyle = (index,index_atm) => {
     if (
       this.state.sampleString.charAt(index) ==
       this.state.typedString.charAt(index)
@@ -90,8 +123,12 @@ class TypeBoard extends React.Component {
         background:"rgba(0, 255, 0, 0.19)"
       };
     }
-    if (index >= this.state.index) {
-      return {};
+    if (index > this.state.index) {
+      return { };
+    }
+    if (index == this.state.index) {
+      return { color: "green",
+      background:"rgba(0, 0, 255, 0.19)"};
     }
     return {
       color: "red",
@@ -99,6 +136,18 @@ class TypeBoard extends React.Component {
     };
   };
   backSpaceHandler = (e) => {
+    if (e.key == "Tab"){
+      e.preventDefault()
+      this.setState({ index: this.state.index + 1 });
+      this.setState({ n_chars: this.state.n_chars + 1 });
+      this.setState({ typedString: this.state.typedString + "\t" });
+      if (
+        this.state.sampleString.charAt(this.state.index) == "\t"
+    
+      ) {
+        this.setState({ n_chars_c: this.state.n_chars_c + 1 });
+      }
+    }
     if (e.key == "Backspace" && this.state.typedString.length > 0) {
       this.setState({
         typedString: this.state.typedString.slice(
@@ -107,7 +156,7 @@ class TypeBoard extends React.Component {
         ),
         index: this.state.index - 1,
       });
-      // console.log(this.state.index, this.state.typedString);
+  
     }
   };
   reset =()=>{
@@ -118,7 +167,7 @@ class TypeBoard extends React.Component {
 
   }
   handleSelect =(e) =>{
-    console.log( e)
+   
     if (e!=this.state.lang){
    
     this.reset()
@@ -136,9 +185,15 @@ class TypeBoard extends React.Component {
     // console.log(this.state.lang)
   }
   pressHandler = (e) => {
+    // e.preventDefault();
+    
+   
+    
+ 
     if (this.state.firstPress==0){
       this.setState({firstPress :(new Date()).getTime()})
-      // this.state.firstPress=(new Date()).getTime()
+     
+      
     }
     // console.log(this.state.index, this.state.typedString);
 
@@ -153,17 +208,21 @@ class TypeBoard extends React.Component {
     }
     if (
       this.state.sampleString.charAt(this.state.index) == e.key
-      //  ||
-      // (this.state.sampleString.charAt(this.state.index) == "\n" &&
-      //   e.key == "Enter")
+  
     ) {
       this.setState({ n_chars_c: this.state.n_chars_c + 1 });
     }
+    
     this.setState({ acc: ((this.state.n_chars_c / this.state.n_chars) * 100) });
     let date= new Date()
-    console.log((date.getTime()-this.state.firstPress)/(1000),this.state.n_chars, this.state.n_chars-this.state.n_chars_c)
+    // console.log((date.getTime()-this.state.firstPress)/(1000),this.state.n_chars, this.state.n_chars-this.state.n_chars_c)
     let wrong_chars =(this.state.n_chars-this.state.n_chars_c)
     this.setState({wpm:((((this.state.n_chars/5)- wrong_chars )/(-(this.state.firstPress - date.getTime())/(1000*60))))})
+    if(this.state.sampleString.length == this.state.typedString.length){
+      this.InsertInfoDB((this.state.firstPress -date.getTime())/(1000*60),this.state.lang,this.state.numero_chars,this.state.acc,this.state.wpm )
+   
+    }
+  
   };
   render() {  
     return (
