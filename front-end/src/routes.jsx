@@ -9,7 +9,7 @@ import Profile from './pages/Profile'
 import Type from './pages/Type'
 
 
-import TypeBoard from "./Components/Typeboard"
+import TypeBoard from "./components/Typeboard"
 import Navbar from './Components/Navbar';
 const routes = () => {
     return (
