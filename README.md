@@ -47,7 +47,7 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 ### Possíveis Tecnologias
 - Front-end: React.JS
 - Back-end:  Express.JS
-- Banco de dados: PostgreSQL
+- Banco de dados: SQLite
 
 </br>
 
