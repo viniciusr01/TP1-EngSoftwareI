@@ -3,9 +3,38 @@ import Navbar from "../../Components/Navbar";
 
 import "./style.css"
 
+import axios from 'axios';
+import Cookies from "universal-cookie";
+const cookies = new Cookies ();
+
+function getInfoUser() {
+
+    const infoCookie = cookies.getAll();
+
+    axios
+    .post('/getInfoUser',{
+        Email: infoCookie.Email,
+      })
+    .then(function (response){
+      console.log("As info user são: ", response.data);
+      
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+  
+}
+
+
 
 export default function Profile () {
     
+    getInfoUser();
+    
+    //const infoCookie = cookies.getAll();
+    //setName = infoCookie.Nome;
+    //setEmail = infoCookie.Email;
+
     const [name, setName] = useState("Kleber Bambam");
 
     const [email, setEmail] = useState("kleber.bambam84@yahoo.com.br");

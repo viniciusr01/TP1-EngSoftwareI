@@ -26,6 +26,20 @@ router.get('/getInfo', (req, res) => {
 })
 
 
+router.post('/getInfoUser', (req, res) => {
+    
+    db.all("SELECT email, nome, time, lang, numero_chars,wpm,acc FROM userTime WHERE email='"+ req.body.Email +"'", (err, results)=> {
+        if(err){
+            console.log(err)
+        } else{
+            console.log("\n O retorno foi: ", results);
+            res.send(results);
+        }
+    }); 
+})
+
+
+
 router.get('/getMedia', (req, res) => {
     
     db.all("SELECT email, nome,  AVG(time) as Media FROM userTime", (err, results)=> {
