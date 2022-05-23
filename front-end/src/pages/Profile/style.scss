@@ -1,0 +1,75 @@
+.profileBody {
+    height:60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1rem;
+            color: var(--main-blue);
+            margin: 0;
+        }
+    }
+
+    .stats {
+        width: 45vw;
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .today {
+            margin-bottom: 4rem;
+        }
+
+        .blue {
+            color: var(--main-blue);
+        }
+
+        .estimatorList {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .estimator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            
+            
+            li {
+                font-size: 1rem;
+            }
+
+            .title {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .value {
+                font-size: 1.8rem;
+                margin: -1rem;
+            }
+        }
+    }
+}

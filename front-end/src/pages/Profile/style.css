@@ -1,0 +1,99 @@
+.profileBody {
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.profileBody .picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileBody .picture h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.profileBody .picture h2 {
+  font-size: 1rem;
+  color: var(--main-blue);
+  margin: 0;
+}
+
+.profileBody .stats {
+  width: 45vw;
+}
+
+.profileBody .stats h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.profileBody .stats ul {
+  list-style: none;
+}
+
+.profileBody .stats .today {
+  margin-bottom: 4rem;
+}
+
+.profileBody .stats .blue {
+  color: var(--main-blue);
+}
+
+.profileBody .stats .estimatorList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.profileBody .stats .estimator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.profileBody .stats .estimator li {
+  font-size: 1rem;
+}
+
+.profileBody .stats .estimator .title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.profileBody .stats .estimator .value {
+  font-size: 1.8rem;
+  margin: -1rem;
+}
+/*# sourceMappingURL=style.css.map */

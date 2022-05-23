@@ -26,24 +26,23 @@ const cookies = new Cookies();
 
 
 export default function Navbar (props) {
+    
 
     function isThisActive (name) {
         if (props.active === name) {
             return 'active'
         }
         else {
-            return 'inactive'
+            return 'inactive' 
         }
     }
 
     function isLoggedIn() {
         const email = cookies.get("Email");
-        if (email === "Undefined" || email === "undefined")
+        if (email === "Undefined" || email === "undefined" || email === "")
             return false;
         else
             return true;
-
-
     }
     return (
         <nav className="Navbar">

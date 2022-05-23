@@ -6,10 +6,10 @@ import Home from './pages/Home'
 import Leaderboard from './pages/Leaderboard'
 import Logout from './pages/Logout'
 import Profile from './pages/Profile'
-import Type from './pages/Type'
+// import Type from './pages/Type'
 
 
-import TypeBoard from "./components/Typeboard"
+import TypeBoard from "./Components/Typeboard"
 import Navbar from './Components/Navbar';
 const routes = () => {
     return (
