@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "../../Components/Navbar";
 
 import "./style.css"
@@ -7,37 +7,62 @@ import axios from 'axios';
 import Cookies from "universal-cookie";
 const cookies = new Cookies ();
 
-function getInfoUser() {
-
-    const infoCookie = cookies.getAll();
-
-    axios
-    .post('/getInfoUser',{
-        Email: infoCookie.Email,
-      })
-    .then(function (response){
-      console.log("As info user são: ", response.data);
-      
-    })
-    .catch(function(error){
-        console.log(error);
-    })
-  
-}
 
 
 
 export default function Profile () {
     
+    function getInfoUser() {
+    
+        const infoCookie = cookies.getAll();
+    
+        axios
+        .post('/getInfoUser',{
+            Email: infoCookie.Email,
+          })
+        .then(function (response){
+        //   console.log(response.data);
+          calcAverage(response.data);
+          
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+      
+    }
     getInfoUser();
     
     //const infoCookie = cookies.getAll();
     //setName = infoCookie.Nome;
     //setEmail = infoCookie.Email;
 
-    const [name, setName] = useState("Kleber Bambam");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
 
-    const [email, setEmail] = useState("kleber.bambam84@yahoo.com.br");
+    const [average, setAverage] = useState(0);
+    const [max, setMax] = useState(0);
+
+    function calcAverage (data) {
+        let wpmWithNull = data.map(a => a.wpm)
+        let wpm = wpmWithNull.filter(n => n)
+
+        let Max = Math.max(...wpm)
+        setMax(Number(Max).toFixed(2))
+
+        let sum = wpm.reduce((a,b) => a+b, 0) / wpm.length
+        setAverage(Number(sum).toFixed(2))
+    }
+
+    useEffect(() => {
+
+        const infoCookie = cookies.getAll();
+
+        setName(infoCookie.Nome);
+        setEmail(infoCookie.Email);
+    
+      
+    }, [])
+    
 
     return (
         <div className="Profile">
@@ -50,7 +75,7 @@ export default function Profile () {
 
                 </div>
                 <div className="stats">
-                    <div className="today">
+                    {/* <div className="today">
                         <h1><span className="blue">today</span> stats</h1>
                         <ul className="estimatorList">
                             <li>
@@ -68,21 +93,21 @@ export default function Profile () {
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className="all-time">
                         <h1><span className="blue">all-time</span> stats</h1>
                         <ul className="estimatorList">
                             <li>
                                 <ul className="estimator">
                                     <li className="title">average speed</li>
-                                    <li className="value">94</li>
+                                    <li className="value">{average}</li>
                                     <li>wpm</li>
                                 </ul>
                             </li>
                             <li>
                                 <ul className="estimator">
                                     <li className="title">record speed</li>
-                                    <li className="value">105</li>
+                                    <li className="value">{max}</li>
                                     <li>wpm</li>
                                 </ul>
                             </li>

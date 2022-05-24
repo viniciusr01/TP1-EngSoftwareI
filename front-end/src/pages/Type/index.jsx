@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../Components/Navbar";
 import axios from 'axios';
+import TypeBoard from "../../Components/Typeboard";
 
 
 //Cookie
@@ -35,6 +36,7 @@ export default function Type () {
         
         <div className="Type">
             <Navbar active="type"/>
+            <TypeBoard />
         </div>
     )
 }
