@@ -35,6 +35,7 @@ app.use(callback);
 
 const dataBase = require('./db/db');
 app.use(dataBase);
+
 app.get('/randomSample',cors(corsOptions),(req,res)=>{
     
 let lang = req.headers.lang

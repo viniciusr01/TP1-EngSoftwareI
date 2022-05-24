@@ -1,29 +1,18 @@
 import React from "react";
 import Navbar from "../../Components/Navbar";
-
-
 import axios from 'axios';
+import Board from "./board";
 
 
-function getTime() {
 
-  axios
-  .get('/getMedia')
-  .then(function (response){
-    console.log(response.data);
-  })
-  .catch(function(error){
-      console.log(error);
-  })
+export default function Type () {
 
-}
-
-
-export default function Leaderboard () {
-    getTime();
+    // InsertInfoDB(70);
     return (
-        <div className="Leaderboard">
+        
+        <div className="Type">
             <Navbar active="leaderboard"/>
+            <Board></Board>
         </div>
     )
 }

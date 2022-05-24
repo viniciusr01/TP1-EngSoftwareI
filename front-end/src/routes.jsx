@@ -7,7 +7,7 @@ import Leaderboard from './pages/Leaderboard'
 import Logout from './pages/Logout'
 import Profile from './pages/Profile'
 import Type from './pages/Type'
-
+// import Example from './Components/Example';
 
 
 const routes = () => {
@@ -20,9 +20,10 @@ const routes = () => {
                 <Route exact path ="/logout" element={<Logout />}/>
                 <Route exact path ="/profile" element={<Profile />}/>
                 <Route exact path ="/leaderboard" element={<Leaderboard />}/>
-                <Route exact path ="/leaderboard" element={<Leaderboard />}/>
+               
                 <Route exact path ="/" element={<Home />}/>
                 <Route exact path ="/type" element={<Type/>}/>
+              
                 
             </Routes>
         </BrowserRouter>
