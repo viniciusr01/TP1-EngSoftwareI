@@ -32,6 +32,9 @@ export default class Board extends React.Component {
     render() { return (
       
       <div  className="container-lg  " >
+      <br></br>
+      <br></br>
+      <br></br>
         <div className=" mx-auto w-100 h-100 d-flex flex-column mx-auto justify-content-end ">
         <div className=" fs-3 text p-2 d-flex flex-row  justify-content-between flex-wrap w-100 h-100 "> 
               <div className="  justify-content-end w-25">

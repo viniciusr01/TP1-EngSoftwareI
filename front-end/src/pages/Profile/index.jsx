@@ -21,7 +21,7 @@ export default function Profile () {
             Email: infoCookie.Email,
           })
         .then(function (response){
-        //   console.log(response.data);
+          console.log(response.data);
           calcAverage(response.data);
           
         })
@@ -32,15 +32,14 @@ export default function Profile () {
     }
     getInfoUser();
     
-    //const infoCookie = cookies.getAll();
-    //setName = infoCookie.Nome;
-    //setEmail = infoCookie.Email;
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
 
     const [average, setAverage] = useState(0);
     const [max, setMax] = useState(0);
+
+    const [averageTime, setAverageTime] = useState(0);
+    const [maxTime, setMaxTime] = useState(0);
 
     function calcAverage (data) {
         let wpmWithNull = data.map(a => a.wpm)
@@ -51,6 +50,15 @@ export default function Profile () {
 
         let sum = wpm.reduce((a,b) => a+b, 0) / wpm.length
         setAverage(Number(sum).toFixed(2))
+
+
+        let timeWithNull = data.map(a => a.time)
+        let time = timeWithNull.filter(n => n)
+        let MaxTime = Math.min(...time)
+        setMaxTime(Number(MaxTime).toFixed(2))
+
+        let sumTime = time.reduce((a,b) => a+b, 0) / time.length
+        setAverageTime(Number(sumTime).toFixed(2))
     }
 
     useEffect(() => {
@@ -69,7 +77,7 @@ export default function Profile () {
             <Navbar active="profile"/>
             <div className="profileBody">
                 <div className="picture">
-                    <img src='' alt='profilePicture'></img>
+                    <img src='http://cdn.onlinewebfonts.com/svg/img_569204.png' alt='profilePicture' width="150" height="150"></img>
                     <h1>{name}</h1>
                     <h2>{email}</h2>
 
@@ -112,6 +120,24 @@ export default function Profile () {
                                 </ul>
                             </li>
                         </ul>
+
+                        <ul className="estimatorList">
+                            <li>
+                                <ul className="estimator">
+                                    <li className="title">average speed</li>
+                                    <li className="value">{averageTime}</li>
+                                    <li>seconds</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul className="estimator">
+                                    <li className="title">record speed</li>
+                                    <li className="value">{maxTime}</li>
+                                    <li>seconds</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

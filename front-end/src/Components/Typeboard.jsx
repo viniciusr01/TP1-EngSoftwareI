@@ -245,7 +245,9 @@ class TypeBoard extends React.Component {
     return (
       
       <div className="container-lg  ">
-        
+      <br></br>
+      <br></br>
+      <br></br>
    
         <div className=" mx-auto w-50 h-100 d-flex flex-column mx-auto justify-content-end ">
           <div
