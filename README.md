@@ -74,7 +74,6 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 
 
 ### Histórias de Usuário:
-- Como usuário normal, eu gostaria de conseguir me cadastrar na plataforma;
 - Como usuário normal, eu gostaria de realizar login;
 - Como usuário normal, eu gostaria de selecionar a linguagem de programação que desejo treinar;
 - Como usuário normal, eu gostaria de treinar e visualizar o tempo que levei para concluir meu treino;
@@ -82,25 +81,16 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
 
 </br>
 
-### 1) História: Como usuário normal, eu gostaria de conseguir me cadastrar na plataforma.
-  Tarefas:
-- Projetar e testar interface web;
-- Implementar interface web;
-- Criar esquema do banco de dados de usuários;
-- Criar e testar formulário de cadastro de usuário;
-- Criar e testar rota para adicionar usuário;
+
  
- </br>
- 
- 
-### 2) Historia: Como usuario normal, gostaria de realizar login na plataforma.
+### 1) Historia: Como usuario normal, gostaria de realizar login na plataforma.
   Tarefas:
 - Projetar e testar interface web da página de login; (Design,Front-end)
 - Implementar interface web da página de login; (Front-end)
 - Projetar um sistema de autenticação de login; (Back-end)
 - Implementar sistema de autenticação de login; (Back-end)
 
-### 3) Historia: Como usuário normal, eu gostaria de selecionar a linguagem de programação que desejo treinar;
+### 2) Historia: Como usuário normal, eu gostaria de selecionar a linguagem de programação que desejo treinar;
   Tarefas:
  - Projetar e testar uma interface web que permita o usuário acompanhar seus inputs; (Front-end)
  - Escolher linguagens de programação possíveis e criar interface que permita o usuário escolher a de interesse; (Front-end)
@@ -108,13 +98,13 @@ O Typ.io é um sistema para pessoas que querem melhorar a velocidade de digitaç
  - Implementar um sistema que indique se o input dado corresponde ao apresentado; (Front-end)
  - Implementar um sistema que indique, em caso de erro, onde ele ocorreu; (Front-end)
  - 
-### 4) Historia: Como usuário normal, eu gostaria de treinar e visualizar o tempo que levei para concluir meu treino;
+### 3) Historia: Como usuário normal, eu gostaria de treinar e visualizar o tempo que levei para concluir meu treino;
   Tarefas:
  - Adicionar a interface web um cronômetro contando desde o início da atividade; (Front-end)
  - Implementar um sistema que armazene os melhores resultados obtidos pelo usuário em cada linguagem de programação; (Back-end)
  - Implementar interface que mostre ao usuário seus melhores resultados;
 
-### 5) História: Como usuário normal, eu gostaria de ver o ranking dos usuários de maneira descrente que fizeram o melhor tempo;
+### 4) História: Como usuário normal, eu gostaria de ver o ranking dos usuários de maneira descrente que fizeram o melhor tempo;
   Tarefas:
   - Projetar e testar interface que permita o usuário ver o ranking (Front-end)
   - Implementar e testar rota get para pegar os dados de recorde de velocidade dos usuários cadastrados no banco de dados (Back-end)
